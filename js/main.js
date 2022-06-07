@@ -1,31 +1,44 @@
-document.querySelector('.play').addEventListener('click',hiddenCover)
-function hiddenCover(){
-const cover = document.querySelector('.cover')
-cover.style.visibility="hidden"
+document.querySelector('.play').addEventListener('click', hiddenCover)
+function hiddenCover() {
+    const cover = document.querySelector('.cover')
+    cover.style.visibility = "hidden"
 }
 
-const turn = 0
-const firstSlelect=''
-const secondSelect=''
-const Cards =document.querySelector('.guessboard')
+let turn = 0;
+let firstSlelect = "";
+let secondSelect = "";
+const cards = document.querySelectorAll('.card')
 
 
 
-
-Cards.forEach(function(card){
-    card.addEventListener('click',function(){
-       if(turn === 0){
-           firstSlelect= card.getAttribute('animal')
-    
-       }else{
-           secondSelect= card.getAttribute('animal')
-           turn=0
-       }
+cards.forEach(function (card) {
+    card.addEventListener('click', function () {
+        card.classList.add('clicked');
+        if (turn === 0) {
+            firstSlelect = card.getAttribute("animal");
+            turn ++
+        } else {
+            secondSelect = card.getAttribute('animal')
+            turn =0
         }
-    )
-}
-)
+// if(firstSlelect===secondSelect){
+//     const matched = 
+// }
+    })
+})
 
-const replayButton = document.querySelector('.play-again')
-replayButton.addEventListener('click',playAgain)
-function playAgain(){}
+
+
+
+
+
+
+
+
+
+
+// const replayButton = document.querySelector('.play-again')
+// replayButton.addEventListener('click',playAgain)
+// function playAgain(){}
+
+
