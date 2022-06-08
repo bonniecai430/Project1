@@ -47,3 +47,14 @@ button{
 .card.clicked img{
     opacity: 1;
 }
+/* .card.clicked{
+    background-color:yellow;
+} */
+
+
+.card.checked{
+    background-color:green;
+}
+/* .card.wrong{
+    background-color:red;
+} */
