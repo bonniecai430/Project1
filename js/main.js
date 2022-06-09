@@ -1,4 +1,5 @@
-document.querySelector('.play').addEventListener('click', hiddenCover)
+const playButton=document.querySelector('.play')
+playButton.addEventListener('click', hiddenCover)
 function hiddenCover() {
     const cover = document.querySelector('.cover')
     cover.style.visibility = "hidden"
@@ -8,8 +9,7 @@ let turn = 0;
 let firstSlelect = "";
 let secondSelect = "";
 const cards = document.querySelectorAll('.card')
-// const guessboard= document.querySelectorAll('guessboard')
-// console.log(guessboard)
+
 const loseMessage=document.getElementById('lose')
 const winMessage=document.getElementById('win')
 
@@ -32,7 +32,9 @@ cards.forEach(function (card) {
                matched[0].classList.remove('clicked')
                matched[1].classList.add('checked')
                matched[1].classList.remove('clicked')
-
+               
+             
+               
                 
             }else{
                const notMatched = document.querySelectorAll('.card.clicked')
@@ -47,6 +49,7 @@ notMatched[1].classList.remove('clicked')
 },700)
 
 
+
                 }
             }
         
@@ -56,24 +59,20 @@ notMatched[1].classList.remove('clicked')
 
 
 
+
+
+const cardsArray= Array.from(cards);
+
 function checkWin(){
-
-    const cardsArray= Array.from(cards);
-    const  check=cardsArray.every(function(card){
-        console.log(card.className)
-        return card.className==="checked"
-    })
-console.log(check)
-
-
-    if(check===true){
-loseMessage.style.visibility='hidden'
-winMessage.style.visibility='visible'
-    }else{
-loseMessage.style.visibility='visible'
+if(cardsArray.every(function(card){
+    return card.className==="card checked"  })){
+    winMessage.innerText="YOU WIN"
+        }else{
+            loseMessage.innerText="YOU LOSE"
+        }
     }
-}
-setTimeout(checkWin,40000)
+   playButton.addEventListener('click',setTimer)
+  function setTimer(){ setTimeout(checkWin,25000)}
 
 
 
@@ -92,50 +91,5 @@ setTimeout(checkWin,40000)
 
 
 
-
-
-
-
-
-
-
-// if(cards.every(function(card){
-//     card.className==='checked'
-// }))
-// {
-//     console.log('win')
-//     // winMessage.style.visibility='visible'
-// }
-
-
-
-
-
-// for(let i =0 ;i<cards.length;i++){
-//    cards[i].className==='checked'
-
-// winMessage.style.visibility='visible'
-// }
-
-
-
-// setTimeout(timer,3000)
-//     function timer(){
-//          return loseMessage.style.visibility='visible'
-//     }
-
-
-
-
-
-
-// const replayButton = document.querySelectorAll('playAgain')
-// console.log(replayButton)
-// replayButton.addEventListener('click',playAgain)
-// function playAgain(){
-//     cards.classList.remove('clicked')
-//     cards.classList.remove('checked')
-//     cards.classList.remove('wrong')
-// }
 
 
