@@ -18,7 +18,11 @@ JavaScript,HTML,CSS
 
 # Next Steps
 1.When the user matched all the pictures.The timer should be pop up the win message immediately.
+
 2.Use the css with more efficient layout to make the game looks more professional.
+
 3.Try to make a random borad. Player can keep playing.
+
 4.Set up a play again button. No matter user win or lose they can click the borad unless they press the play again button.
+
 5.Add some background music and animation to make the game more fun.
