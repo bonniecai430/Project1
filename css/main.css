@@ -7,6 +7,7 @@
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, .8);
+    background-size: cover;
 }
 .play{
     margin:300px 300px;
@@ -58,3 +59,13 @@ button{
 /* .card.wrong{
     background-color:red;
 } */
+#lose{
+/* float: left; */
+    font-size: 100px;
+    visibility: hidden;
+}
+#win{
+    /* float: left; */
+    font-size: 100px;
+    visibility: hidden;
+}
